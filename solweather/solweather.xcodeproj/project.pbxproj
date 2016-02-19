@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0660B08C1C76190D0027C12D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B08B1C76190D0027C12D /* main.m */; };
+		0660B08F1C76190D0027C12D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B08E1C76190D0027C12D /* AppDelegate.m */; };
+		0660B0921C76190D0027C12D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0911C76190D0027C12D /* ViewController.m */; };
+		0660B0951C76190D0027C12D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0660B0931C76190D0027C12D /* Main.storyboard */; };
+		0660B0971C76190D0027C12D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0660B0961C76190D0027C12D /* Images.xcassets */; };
+		0660B09A1C76190D0027C12D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0660B0981C76190D0027C12D /* LaunchScreen.xib */; };
+		0660B0A61C76190D0027C12D /* solweatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0A51C76190D0027C12D /* solweatherTests.m */; };
+		0660B0B11C7619E50027C12D /* XYRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0B01C7619E50027C12D /* XYRightViewController.m */; };
+		0660B0BD1C761B3D0027C12D /* XYLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0BA1C761B3D0027C12D /* XYLeftMenuViewController.m */; };
+		0660B0D01C761EAC0027C12D /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0C11C761EAC0027C12D /* AFHTTPSessionManager.m */; };
+		0660B0D11C761EAC0027C12D /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0C41C761EAC0027C12D /* AFNetworkReachabilityManager.m */; };
+		0660B0D21C761EAC0027C12D /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0C61C761EAC0027C12D /* AFSecurityPolicy.m */; };
+		0660B0D31C761EAC0027C12D /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0C81C761EAC0027C12D /* AFURLRequestSerialization.m */; };
+		0660B0D41C761EAC0027C12D /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0CA1C761EAC0027C12D /* AFURLResponseSerialization.m */; };
+		0660B0D51C761EAC0027C12D /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0CC1C761EAC0027C12D /* AFURLSessionManager.m */; };
+		0660B0D61C761EAC0027C12D /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0CF1C761EAC0027C12D /* GDataXMLNode.m */; };
+		0660B0E01C761FA00027C12D /* XYGetWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0D91C761FA00027C12D /* XYGetWeatherData.m */; };
+		0660B0E11C761FA00027C12D /* XYHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0DB1C761FA00027C12D /* XYHttpTool.m */; };
+		0660B0E21C761FA00027C12D /* XYWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0DD1C761FA00027C12D /* XYWeatherData.m */; };
+		0660B0E31C761FA00027C12D /* XYWeatherStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0660B0DF1C761FA00027C12D /* XYWeatherStateManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0660B0A01C76190D0027C12D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0660B07E1C76190D0027C12D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0660B0851C76190D0027C12D;
+			remoteInfo = solweather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0660B0861C76190D0027C12D /* solweather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = solweather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0660B08A1C76190D0027C12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0660B08B1C76190D0027C12D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0660B08D1C76190D0027C12D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0660B08E1C76190D0027C12D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0660B0901C76190D0027C12D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0660B0911C76190D0027C12D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0660B0941C76190D0027C12D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0660B0961C76190D0027C12D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0660B0991C76190D0027C12D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		0660B09F1C76190D0027C12D /* solweatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = solweatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0660B0A41C76190D0027C12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0660B0A51C76190D0027C12D /* solweatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = solweatherTests.m; sourceTree = "<group>"; };
+		0660B0AF1C7619E50027C12D /* XYRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYRightViewController.h; sourceTree = "<group>"; };
+		0660B0B01C7619E50027C12D /* XYRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYRightViewController.m; sourceTree = "<group>"; };
+		0660B0B91C761B3D0027C12D /* XYLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYLeftMenuViewController.h; sourceTree = "<group>"; };
+		0660B0BA1C761B3D0027C12D /* XYLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYLeftMenuViewController.m; sourceTree = "<group>"; };
+		0660B0C01C761EAC0027C12D /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		0660B0C11C761EAC0027C12D /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		0660B0C21C761EAC0027C12D /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		0660B0C31C761EAC0027C12D /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		0660B0C41C761EAC0027C12D /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		0660B0C51C761EAC0027C12D /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		0660B0C61C761EAC0027C12D /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		0660B0C71C761EAC0027C12D /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		0660B0C81C761EAC0027C12D /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		0660B0C91C761EAC0027C12D /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		0660B0CA1C761EAC0027C12D /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		0660B0CB1C761EAC0027C12D /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		0660B0CC1C761EAC0027C12D /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		0660B0CE1C761EAC0027C12D /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		0660B0CF1C761EAC0027C12D /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		0660B0D81C761FA00027C12D /* XYGetWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYGetWeatherData.h; sourceTree = "<group>"; };
+		0660B0D91C761FA00027C12D /* XYGetWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYGetWeatherData.m; sourceTree = "<group>"; };
+		0660B0DA1C761FA00027C12D /* XYHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYHttpTool.h; sourceTree = "<group>"; };
+		0660B0DB1C761FA00027C12D /* XYHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYHttpTool.m; sourceTree = "<group>"; };
+		0660B0DC1C761FA00027C12D /* XYWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYWeatherData.h; sourceTree = "<group>"; };
+		0660B0DD1C761FA00027C12D /* XYWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYWeatherData.m; sourceTree = "<group>"; };
+		0660B0DE1C761FA00027C12D /* XYWeatherStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYWeatherStateManager.h; sourceTree = "<group>"; };
+		0660B0DF1C761FA00027C12D /* XYWeatherStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYWeatherStateManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0660B0831C76190D0027C12D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0660B09C1C76190D0027C12D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0660B07D1C76190D0027C12D = {
+			isa = PBXGroup;
+			children = (
+				0660B0881C76190D0027C12D /* solweather */,
+				0660B0A21C76190D0027C12D /* solweatherTests */,
+				0660B0871C76190D0027C12D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0660B0871C76190D0027C12D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0660B0861C76190D0027C12D /* solweather.app */,
+				0660B09F1C76190D0027C12D /* solweatherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0660B0881C76190D0027C12D /* solweather */ = {
+			isa = PBXGroup;
+			children = (
+				0660B08D1C76190D0027C12D /* AppDelegate.h */,
+				0660B08E1C76190D0027C12D /* AppDelegate.m */,
+				0660B0901C76190D0027C12D /* ViewController.h */,
+				0660B0911C76190D0027C12D /* ViewController.m */,
+				0660B0931C76190D0027C12D /* Main.storyboard */,
+				0660B0961C76190D0027C12D /* Images.xcassets */,
+				0660B0981C76190D0027C12D /* LaunchScreen.xib */,
+				0660B0D71C761FA00027C12D /* Tool */,
+				0660B0B71C761B3D0027C12D /* LeftMenu */,
+				0660B0BE1C761EAC0027C12D /* Others */,
+				0660B0B31C761A020027C12D /* AddLocation */,
+				0660B0891C76190D0027C12D /* Supporting Files */,
+			);
+			path = solweather;
+			sourceTree = "<group>";
+		};
+		0660B0891C76190D0027C12D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0660B08A1C76190D0027C12D /* Info.plist */,
+				0660B08B1C76190D0027C12D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0660B0A21C76190D0027C12D /* solweatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				0660B0A51C76190D0027C12D /* solweatherTests.m */,
+				0660B0A31C76190D0027C12D /* Supporting Files */,
+			);
+			path = solweatherTests;
+			sourceTree = "<group>";
+		};
+		0660B0A31C76190D0027C12D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0660B0A41C76190D0027C12D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0660B0B21C7619F60027C12D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0660B0AF1C7619E50027C12D /* XYRightViewController.h */,
+				0660B0B01C7619E50027C12D /* XYRightViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0660B0B31C761A020027C12D /* AddLocation */ = {
+			isa = PBXGroup;
+			children = (
+				0660B0B21C7619F60027C12D /* Controllers */,
+			);
+			name = AddLocation;
+			sourceTree = "<group>";
+		};
+		0660B0B71C761B3D0027C12D /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0660B0B81C761B3D0027C12D /* Controllers */,
+				0660B0BB1C761B3D0027C12D /* Models */,
+				0660B0BC1C761B3D0027C12D /* Views */,
+			);
+			path = LeftMenu;
+			sourceTree = "<group>";
+		};
+		0660B0B81C761B3D0027C12D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0660B0B91C761B3D0027C12D /* XYLeftMenuViewController.h */,
+				0660B0BA1C761B3D0027C12D /* XYLeftMenuViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0660B0BB1C761B3D0027C12D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0660B0BC1C761B3D0027C12D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0660B0BE1C761EAC0027C12D /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				0660B0BF1C761EAC0027C12D /* AFNetworking */,
+				0660B0CD1C761EAC0027C12D /* GDataXML */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		0660B0BF1C761EAC0027C12D /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				0660B0C01C761EAC0027C12D /* AFHTTPSessionManager.h */,
+				0660B0C11C761EAC0027C12D /* AFHTTPSessionManager.m */,
+				0660B0C21C761EAC0027C12D /* AFNetworking.h */,
+				0660B0C31C761EAC0027C12D /* AFNetworkReachabilityManager.h */,
+				0660B0C41C761EAC0027C12D /* AFNetworkReachabilityManager.m */,
+				0660B0C51C761EAC0027C12D /* AFSecurityPolicy.h */,
+				0660B0C61C761EAC0027C12D /* AFSecurityPolicy.m */,
+				0660B0C71C761EAC0027C12D /* AFURLRequestSerialization.h */,
+				0660B0C81C761EAC0027C12D /* AFURLRequestSerialization.m */,
+				0660B0C91C761EAC0027C12D /* AFURLResponseSerialization.h */,
+				0660B0CA1C761EAC0027C12D /* AFURLResponseSerialization.m */,
+				0660B0CB1C761EAC0027C12D /* AFURLSessionManager.h */,
+				0660B0CC1C761EAC0027C12D /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		0660B0CD1C761EAC0027C12D /* GDataXML */ = {
+			isa = PBXGroup;
+			children = (
+				0660B0CE1C761EAC0027C12D /* GDataXMLNode.h */,
+				0660B0CF1C761EAC0027C12D /* GDataXMLNode.m */,
+			);
+			path = GDataXML;
+			sourceTree = "<group>";
+		};
+		0660B0D71C761FA00027C12D /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				0660B0D81C761FA00027C12D /* XYGetWeatherData.h */,
+				0660B0D91C761FA00027C12D /* XYGetWeatherData.m */,
+				0660B0DA1C761FA00027C12D /* XYHttpTool.h */,
+				0660B0DB1C761FA00027C12D /* XYHttpTool.m */,
+				0660B0DC1C761FA00027C12D /* XYWeatherData.h */,
+				0660B0DD1C761FA00027C12D /* XYWeatherData.m */,
+				0660B0DE1C761FA00027C12D /* XYWeatherStateManager.h */,
+				0660B0DF1C761FA00027C12D /* XYWeatherStateManager.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0660B0851C76190D0027C12D /* solweather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0660B0A91C76190D0027C12D /* Build configuration list for PBXNativeTarget "solweather" */;
+			buildPhases = (
+				0660B0821C76190D0027C12D /* Sources */,
+				0660B0831C76190D0027C12D /* Frameworks */,
+				0660B0841C76190D0027C12D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = solweather;
+			productName = solweather;
+			productReference = 0660B0861C76190D0027C12D /* solweather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0660B09E1C76190D0027C12D /* solweatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0660B0AC1C76190D0027C12D /* Build configuration list for PBXNativeTarget "solweatherTests" */;
+			buildPhases = (
+				0660B09B1C76190D0027C12D /* Sources */,
+				0660B09C1C76190D0027C12D /* Frameworks */,
+				0660B09D1C76190D0027C12D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0660B0A11C76190D0027C12D /* PBXTargetDependency */,
+			);
+			name = solweatherTests;
+			productName = solweatherTests;
+			productReference = 0660B09F1C76190D0027C12D /* solweatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0660B07E1C76190D0027C12D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = xiayao;
+				TargetAttributes = {
+					0660B0851C76190D0027C12D = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					0660B09E1C76190D0027C12D = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 0660B0851C76190D0027C12D;
+					};
+				};
+			};
+			buildConfigurationList = 0660B0811C76190D0027C12D /* Build configuration list for PBXProject "solweather" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0660B07D1C76190D0027C12D;
+			productRefGroup = 0660B0871C76190D0027C12D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0660B0851C76190D0027C12D /* solweather */,
+				0660B09E1C76190D0027C12D /* solweatherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0660B0841C76190D0027C12D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0660B0951C76190D0027C12D /* Main.storyboard in Resources */,
+				0660B09A1C76190D0027C12D /* LaunchScreen.xib in Resources */,
+				0660B0971C76190D0027C12D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0660B09D1C76190D0027C12D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0660B0821C76190D0027C12D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0660B0B11C7619E50027C12D /* XYRightViewController.m in Sources */,
+				0660B0D21C761EAC0027C12D /* AFSecurityPolicy.m in Sources */,
+				0660B0921C76190D0027C12D /* ViewController.m in Sources */,
+				0660B0D61C761EAC0027C12D /* GDataXMLNode.m in Sources */,
+				0660B0D41C761EAC0027C12D /* AFURLResponseSerialization.m in Sources */,
+				0660B0BD1C761B3D0027C12D /* XYLeftMenuViewController.m in Sources */,
+				0660B08F1C76190D0027C12D /* AppDelegate.m in Sources */,
+				0660B0E21C761FA00027C12D /* XYWeatherData.m in Sources */,
+				0660B0D01C761EAC0027C12D /* AFHTTPSessionManager.m in Sources */,
+				0660B0E01C761FA00027C12D /* XYGetWeatherData.m in Sources */,
+				0660B0D31C761EAC0027C12D /* AFURLRequestSerialization.m in Sources */,
+				0660B0E11C761FA00027C12D /* XYHttpTool.m in Sources */,
+				0660B0D51C761EAC0027C12D /* AFURLSessionManager.m in Sources */,
+				0660B0D11C761EAC0027C12D /* AFNetworkReachabilityManager.m in Sources */,
+				0660B08C1C76190D0027C12D /* main.m in Sources */,
+				0660B0E31C761FA00027C12D /* XYWeatherStateManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0660B09B1C76190D0027C12D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0660B0A61C76190D0027C12D /* solweatherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0660B0A11C76190D0027C12D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0660B0851C76190D0027C12D /* solweather */;
+			targetProxy = 0660B0A01C76190D0027C12D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0660B0931C76190D0027C12D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0660B0941C76190D0027C12D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0660B0981C76190D0027C12D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0660B0991C76190D0027C12D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0660B0A71C76190D0027C12D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0660B0A81C76190D0027C12D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0660B0AA1C76190D0027C12D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = solweather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0660B0AB1C76190D0027C12D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = solweather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0660B0AD1C76190D0027C12D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = solweatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/solweather.app/solweather";
+			};
+			name = Debug;
+		};
+		0660B0AE1C76190D0027C12D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = solweatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/solweather.app/solweather";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0660B0811C76190D0027C12D /* Build configuration list for PBXProject "solweather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0660B0A71C76190D0027C12D /* Debug */,
+				0660B0A81C76190D0027C12D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0660B0A91C76190D0027C12D /* Build configuration list for PBXNativeTarget "solweather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0660B0AA1C76190D0027C12D /* Debug */,
+				0660B0AB1C76190D0027C12D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0660B0AC1C76190D0027C12D /* Build configuration list for PBXNativeTarget "solweatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0660B0AD1C76190D0027C12D /* Debug */,
+				0660B0AE1C76190D0027C12D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0660B07E1C76190D0027C12D /* Project object */;
+}
