@@ -25,7 +25,8 @@
                                                       forKey:@"theCityName"];
     [XYHttpTool GET:@"http://www.webxml.com.cn/WebServices/WeatherWebService.asmx/getWeatherbyCityName" parameters:param success:^(id responseObject) {
         //使用GDataXML解析数据
-        GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithXMLString:responseObject options:1 error:nil];
+//        GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithXMLString:responseObject options:1 error:nil];
+        GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:responseObject options:1 error:nil];
         //获取根节点对象
         GDataXMLElement *rootElement = doc.rootElement;
         //将xml字符串转化为字符串数组
@@ -61,56 +62,55 @@
     [XYGetWeatherData getWeatherDataWithCityName:cityName withTag:tag success:^(NSArray *dataArray) {
         XYWeatherData *weatherData = [[XYWeatherData alloc] init];
         weatherData.cityName = cityName;
-        //获取最低最高温度
-        weatherData.todayTemp = [[dataArray objectAtIndex:5] stringValue];
-        
-//        weatherData.minTemp = [tempScale substringWithRange:NSMakeRange(0, 2)];
-//        weatherData.maxTemp = [tempScale substringFromIndex:3];
+        if ([weatherData.cityName isEqualToString:@"襄樊" ]) {
+            weatherData.cityName = @"襄阳";
+        }
         //当前天气概况
         NSString *overviewStr = [[dataArray objectAtIndex:6] stringValue];
         NSArray *overview = [overviewStr componentsSeparatedByString:@" "];
         weatherData.weatherOverview = overview[1] ;
+                NSLog(@"%@", weatherData.weatherOverview);
         //获取天气图标
-        NSString *weatherStr = [[dataArray objectAtIndex:8] stringValue];
-        weatherData.weatherImg = [weatherData weatherImageWithString:weatherStr];
-        if ([weatherStr contains:@"雾"] && ![weatherStr contains:@"霾"]) {
-            weatherData.weatherImg = [UIImage imageNamed:@"fog"];
-        }
+        weatherData.weatherImgStr = [[dataArray objectAtIndex:8] stringValue];
+//        if ([weatherStr contains:@"雾"] && ![weatherStr contains:@"霾"]) {
+//            weatherData.weatherImg = [UIImage imageNamed:@"fog"];
+//        }
         //获取更多的天气信息
         NSString *desc = [[dataArray objectAtIndex:10] stringValue];
-        //当前天气描述
-        weatherData.weatherDesc = [cityName stringByAppendingString:desc];
         
         NSString *content = [desc substringFromIndex:7];
-        NSArray *comp = [content componentsSeparatedByString:@"; "];
+        NSLog(@"%@", content);
+        NSArray *comp = [content componentsSeparatedByString:@"；"];
         //温度范围
         weatherData.todayTemp = [[dataArray objectAtIndex:5] stringValue];
+        NSLog(@"%@", weatherData.todayTemp);
         //当前温度
-        weatherData.currTemp = [comp[0] substringFromIndex:3];
+        NSString *temp = [comp[0] substringFromIndex:3];
+        weatherData.currTemp = [temp stringByReplacingOccurrencesOfString:@"℃" withString:@"°"];
+                NSLog(@"%@", weatherData.currTemp);
         //风向 风力
-        weatherData.windScale = [[comp[1] substringFromIndex:6] stringByReplacingOccurrencesOfString:@" " withString:@""];
-        //湿度
-        weatherData.humidity = [comp[2] substringFromIndex:3];
+        weatherData.windScale = [comp[1] substringFromIndex:6];
+                NSLog(@"%@", weatherData.windScale);
+         //湿度
+        weatherData.humidity = comp[2];
+                NSLog(@"%@", weatherData.humidity);
         //空气质量
-        weatherData.airQuality = [comp[4] substringToIndex:5];
+        NSString *aqi = comp[3];
+        NSArray *airArr = [aqi componentsSeparatedByString:@"。"];
+        weatherData.airQuality = airArr[1];
+                NSLog(@"%@", weatherData.airQuality);
         //获取明天天气
-        NSString *tomorrowStr = [[dataArray objectAtIndex:17] stringValue];
-        weatherData.tomorrowImg = [weatherData weatherImageWithString:tomorrowStr];
-        if ([tomorrowStr contains:@"雾"] && ![tomorrowStr contains:@"霾"]) {
-            weatherData.tomorrowImg = [UIImage imageNamed:@"fog"];
-        }
-        weatherData.tomorrowTemp = [dataArray objectAtIndex:14];
-        //        weatherData.tomorrowWeather = [dataArray objectAtIndex:15];
-        
-        //后天的天气
-        NSString *thirdStr = [[dataArray objectAtIndex:22] stringValue];
-        weatherData.thirdImg = [weatherData weatherImageWithString:thirdStr];
-        if ([thirdStr contains:@"雾"] && ![thirdStr contains:@"霾"]) {
-            weatherData.thirdImg = [UIImage imageNamed:@"fog"];
-        }
-        weatherData.thirdTemp = [dataArray objectAtIndex:19];
-        //        weatherData.thirdWeather = [dataArray objectAtIndex:20];
-        //TODO: 完善数据获取
+        weatherData.tomorrowImgStr = [[dataArray objectAtIndex:15] stringValue];
+                NSLog(@"%@", weatherData.tomorrowImgStr);
+//        if ([tomorrowStr contains:@"雾"] && ![tomorrowStr contains:@"霾"]) {
+//            weatherData.tomorrowImg = [UIImage imageNamed:@"fog"];
+//        }
+        weatherData.tomorrowTemp = [[dataArray objectAtIndex:12] stringValue];
+                NSLog(@"%@", weatherData.tomorrowTemp);
+        weatherData.thirdImgStr = [[dataArray objectAtIndex:20] stringValue];
+                NSLog(@"%@", weatherData.thirdImgStr);
+        weatherData.thirdTemp = [[dataArray objectAtIndex:17] stringValue];
+                NSLog(@"%@", weatherData.thirdTemp);
         if (success) {
             success(weatherData);
         }
@@ -125,8 +125,9 @@
 + (void)getDetailedWeatherDataWithlocation:(CLLocation *)location withTag:(NSInteger)tag success:(void (^)(XYWeatherData *))success failure:(void (^)(NSError *))failure
 {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        if (placemarks > 0) {
+    
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (placemarks.count > 0) {
             //地理信息反编译，获取当前城市信息
             CLPlacemark *placemark = placemarks[0];
             NSDictionary *addressDict = placemark.addressDictionary;
@@ -134,6 +135,7 @@
             //根据当前城市信息，获取天气数据
             if ([city contains:@"市"]) {
                 NSString *locationName = [city stringByReplacingOccurrencesOfString:@"市" withString:@""];
+                NSLog(@"%@", locationName);
                 [XYGetWeatherData getDetailedWeatherDataWithCityName:locationName withTag:tag success:^(XYWeatherData *weatherData) {
                     if (success) {
                         success(weatherData);
@@ -141,15 +143,15 @@
                 } failure:^(NSError *error) {
                     failure(error);
                 }];
-            }
         }
+    }
     }];
 }
-
 + (void)getDetailedWeatherDataWithPlacemark:(CLPlacemark *)placemark withTag:(NSInteger)tag success:(void (^)(XYWeatherData *))success failure:(void (^)(NSError *))failure
 {
     NSDictionary *addressDict = placemark.addressDictionary;
     NSString *cityStr = [addressDict objectForKey:(NSString *)kABPersonAddressCityKey];
+    NSLog(@"%@",cityStr);
     if ([cityStr contains:@"市"]) {
         NSString *cityName = [cityStr stringByReplacingOccurrencesOfString:@"市" withString:@""];
         [XYGetWeatherData getDetailedWeatherDataWithCityName:cityName withTag:tag success:^(XYWeatherData *weatherData) {

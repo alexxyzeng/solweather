@@ -42,6 +42,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init]) {
+        self.cityName = [aDecoder decodeObjectForKey:@"cityName"];
         self.placemark = [aDecoder decodeObjectForKey:@"placemark"];
         self.weatherOverview = [aDecoder decodeObjectForKey:@"overview"];
         self.weatherDesc = [aDecoder decodeObjectForKey:@"desc"];
@@ -53,6 +54,7 @@
         self.windScale = [aDecoder decodeObjectForKey:@"windscale"];
         self.tomorrowImgStr = [aDecoder decodeObjectForKey:@"tomorrowImg"];
         self.tomorrowTemp = [aDecoder decodeObjectForKey:@"tomorrowTemp"];
+        self.thirdTemp = [aDecoder decodeObjectForKey:@"thirdTemp"];
         self.thirdImgStr = [aDecoder decodeObjectForKey:@"thirdImg"];
 
     }
@@ -61,6 +63,7 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
+    [aCoder encodeObject:self.cityName forKey:@"cityName"];
     [aCoder encodeObject:self.placemark forKey:@"placemark"];
     [aCoder encodeObject:self.weatherOverview forKey:@"overview"];
     [aCoder encodeObject:self.weatherDesc forKey:@"desc"];

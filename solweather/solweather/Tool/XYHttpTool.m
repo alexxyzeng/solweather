@@ -32,7 +32,6 @@
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         failure(error);
     }];
-    [
 }
 
 @end

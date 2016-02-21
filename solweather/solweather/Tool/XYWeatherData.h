@@ -24,7 +24,7 @@
 /**
  *  天气图标
  */
-@property (nonatomic, assign) UIImage *weatherImgStr;
+@property (nonatomic, copy) NSString *weatherImgStr;
 /**
  *  当前温度
  */
@@ -48,7 +48,7 @@
 /**
  *  明天天气图标
  */
-@property (nonatomic, assign) UIImage *tomorrowImgStr;
+@property (nonatomic, copy) NSString *tomorrowImgStr;
 /**
  *  明天气温范围
  */
@@ -56,7 +56,7 @@
 /**
  *  后天天气图标
  */
-@property (nonatomic, assign) UIImage *thirdImgStr;
+@property (nonatomic, copy) NSString *thirdImgStr;
 /**
  *  后天气温范围
  */
