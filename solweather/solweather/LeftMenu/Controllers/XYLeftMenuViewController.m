@@ -47,7 +47,7 @@
         
         //设置确定按钮
 //        _doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItem target:self action:@selector(doneBtnClicked)];
-        _doneBtn = [[UIBarButtonItem alloc] initWithTitle:@"离开" style:UIBarButtonItemStyleDone target:self action:@selector(doneBtnClicked)];
+        _doneBtn = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(doneBtnClicked)];
         //        襄樊
         UINavigationItem *navItem = [[UINavigationItem alloc] initWithTitle:@"天气城市列表"];
         navItem.rightBarButtonItem = _doneBtn;
@@ -140,7 +140,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSArray *location = _locations[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@   %@", location.firstObject, location[2]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@   %@", location.firstObject, location[1]];
     
     return cell;
 }

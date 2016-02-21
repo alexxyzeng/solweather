@@ -7,7 +7,7 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>856B3226-CA70-4263-B2D9-E7D2B464A3E7</string>
 	<key>IDESourceControlProjectName</key>
-	<string>solweather</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>7D0899A24046D758B26C8D2A842E0EFAE6651E17</key>
@@ -16,7 +16,7 @@
 		<string>github.com:xiayao/solweather.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>solweather/solweather.xcodeproj</string>
+	<string>solweather/solweather.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>7D0899A24046D758B26C8D2A842E0EFAE6651E17</key>

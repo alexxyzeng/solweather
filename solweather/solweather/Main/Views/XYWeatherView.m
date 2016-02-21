@@ -195,7 +195,7 @@
  */
 - (void)initCurrentTempLabel
 {
-    _currentTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.center.x - 130, self.center.y - 10, 120 , 65)];
+    _currentTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.center.x - 130, self.center.y, 120 , 65)];
     _currentTempLabel.textAlignment = NSTextAlignmentRight;
     _currentTempLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:80];
     _currentTempLabel.textColor = [UIColor whiteColor];
@@ -207,21 +207,21 @@
 - (void)initDetailLabel
 {
 
-    _airQualityLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.center.x + 15, self.center.y - 9, 120, 20)];
+    _airQualityLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.center.x + 15, self.center.y + 1, 120, 20)];
     _airQualityLabel.textAlignment = NSTextAlignmentLeft;
-    _airQualityLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:12];
+    _airQualityLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     _airQualityLabel.textColor = [UIColor whiteColor];
     _currentTempLabel.adjustsFontSizeToFitWidth = YES;
     
-    _windSpeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.center.x + 15, self.center.y + 13, 120, 20)];
+    _windSpeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.center.x + 15, self.center.y + 23, 120, 20)];
     _windSpeedLabel.textAlignment = NSTextAlignmentLeft;
-    _windSpeedLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:12];
+    _windSpeedLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     _windSpeedLabel.textColor = [UIColor whiteColor];
     _windSpeedLabel.adjustsFontSizeToFitWidth = YES;
     
-    _humidityLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.center.x + 15, self.center.y + 35, 120, 20)];
+    _humidityLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.center.x + 15, self.center.y + 45, 120, 20)];
     _humidityLabel.textAlignment = NSTextAlignmentLeft;
-    _humidityLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:12];
+    _humidityLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     _humidityLabel.textColor = [UIColor whiteColor];
     _humidityLabel.adjustsFontSizeToFitWidth = YES;
     
@@ -237,17 +237,17 @@
     int imgH = 75;
     int margin = (self.bounds.size.width - 3 *imgW) / 4;
     //今天天气概况
-    _todayLabel = [[UILabel alloc]initWithFrame:CGRectMake(margin, 1.4 * self.center.y, imgW, 40)];
+    _todayLabel = [[UILabel alloc]initWithFrame:CGRectMake(margin, 1.35 * self.center.y, imgW, 40)];
 
     _todayLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     _todayLabel.textColor = [UIColor whiteColor];
     _todayLabel.textAlignment = NSTextAlignmentCenter;
     _todayLabel.adjustsFontSizeToFitWidth = YES;
     
-    _todayImg = [[UIImageView alloc] initWithFrame:CGRectMake(margin, 1.4 * self.center.y + 30, imgW, imgH)];
+    _todayImg = [[UIImageView alloc] initWithFrame:CGRectMake(margin, 1.35 * self.center.y + 25, imgW, imgH)];
     _todayImg.contentMode = UIViewContentModeScaleAspectFill;
     
-    _todayTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin, 1.4 * self.center.y + 70, imgW, imgH)];
+    _todayTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin, 1.35 * self.center.y + 70, imgW, imgH)];
     _todayTempLabel.textColor = [UIColor whiteColor];
     _todayTempLabel.textAlignment = NSTextAlignmentCenter;
     _todayTempLabel.adjustsFontSizeToFitWidth = YES;
@@ -258,7 +258,7 @@
     
     //明天天气概况
     _tomorrowLabel = [[UILabel alloc]initWithFrame:CGRectMake(margin * 2 + 75,
-                                              1.4 * self.center.y, imgW, 40)];
+                                              1.35 * self.center.y, imgW, 40)];
 
     _tomorrowLabel.textColor = [UIColor whiteColor];
     _tomorrowLabel.textAlignment = NSTextAlignmentCenter;
@@ -266,11 +266,11 @@
     _tomorrowLabel.adjustsFontSizeToFitWidth = YES;
     
     _tomorrowImg = [[UIImageView alloc] initWithFrame:CGRectMake(margin * 2 + 75,
-                                             1.4 * self.center.y + 25, imgW, imgH)];
+                                             1.35 * self.center.y + 25, imgW, imgH)];
     _tomorrowImg.contentMode = UIViewContentModeScaleAspectFill;
     
     _tomorrowTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin * 2 + 75,
-                                           1.4 * self.center.y + 70, imgW, imgH)];
+                                           1.35 * self.center.y + 70, imgW, imgH)];
     _tomorrowTempLabel.textColor = [UIColor whiteColor];
     _tomorrowTempLabel.textAlignment = NSTextAlignmentCenter;
     _tomorrowTempLabel.adjustsFontSizeToFitWidth = YES;
@@ -281,7 +281,7 @@
     
     //后天天气概况
     _thirdLabel = [[UILabel alloc]initWithFrame:CGRectMake(margin * 3 + 150,
-                                              1.4 * self.center.y, imgW, 40)];
+                                              1.35 * self.center.y, imgW, 40)];
 
     _thirdLabel.textColor = [UIColor whiteColor];
     _thirdLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
@@ -289,11 +289,11 @@
     _thirdLabel.adjustsFontSizeToFitWidth = YES;
     
     _thirdImg = [[UIImageView alloc] initWithFrame:CGRectMake(margin * 3 + 150,
-                                             1.4 * self.center.y + 30, imgW, imgH)];
+                                             1.35 * self.center.y + 25, imgW, imgH)];
     _thirdImg.contentMode = UIViewContentModeScaleAspectFill;
     
     _thirdTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin * 3 + 150,
-                                           1.4 * self.center.y + 70, imgW, imgH)];
+                                           1.35 * self.center.y + 70, imgW, imgH)];
     _thirdTempLabel.textColor = [UIColor whiteColor];
     _thirdTempLabel.textAlignment = NSTextAlignmentCenter;
     _thirdTempLabel.adjustsFontSizeToFitWidth = YES;

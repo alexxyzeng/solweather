@@ -1,10 +1,3 @@
-//
-//  ViewController.m
-//  solarweather
-//
-//  Created by xiayao on 16/2/12.
-//  Copyright (c) 2016年 xiayao. All rights reserved.
-//
 
 #import "XYMainViewController.h"
 #import "XYLeftMenuViewController.h"
@@ -98,6 +91,7 @@
         [self initViewControllers];
         [self initSubViews];
         [self initWeatherView];
+        [self updateWeatherData];
 //        [self.view bringSubviewToFront:_blurredOverlayView];
     }
     return self;
@@ -155,7 +149,7 @@
     formatter.dateFormat = @"YYYY年MM月dd日";
     NSString *date = [formatter stringFromDate:[NSDate date]];
     _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 40)];
-    _timeLabel.center = CGPointMake(CGRectGetMidX(self.view.bounds), 30);
+    _timeLabel.center = CGPointMake(CGRectGetMidX(self.view.bounds), 32);
     _timeLabel.text = date;
     _timeLabel.textColor = [UIColor whiteColor];
     _timeLabel.textAlignment = NSTextAlignmentCenter;
@@ -292,6 +286,7 @@
     for (XYWeatherView *weatherView in _weatherScrView.subviews) {
         if (weatherView.tag == tag) {
             [_weatherData setObject:data forKey:[NSNumber numberWithInteger:tag]];
+            [XYWeatherStateManager setWeatherData:_weatherData];
         }
         [self updateWeatherView:weatherView withData:data];
         [MBProgressHUD hideHUD];
@@ -362,8 +357,8 @@
     [_weatherTags removeObject:[NSNumber numberWithInteger:tag]];
     
     //  重新保存天气数据和视图tag
-    [XYWeatherStateManager setWeatherData:self.weatherData];
-    [XYWeatherStateManager setWeatherTags:self.weatherTags];
+    [XYWeatherStateManager setWeatherData:_weatherData];
+    [XYWeatherStateManager setWeatherTags:_weatherTags];
 }
 
 - (void)dismissXYLeftMenuViewController
@@ -403,15 +398,15 @@
 #pragma mark 添加城市天气视图控制器代理方法
 - (void)didAddLocationWithPlacemark:(CLPlacemark *)placemark
 {
-    XYWeatherData *weatherData = [self.weatherData objectForKey:[NSNumber numberWithInteger:placemark.locality.hash]];
+    XYWeatherData *weatherData = [_weatherData objectForKey:[NSNumber numberWithInteger:placemark.locality.hash]];
     if (!weatherData) {//如果没有天气数据
         XYWeatherView *weatherView = [[XYWeatherView alloc] initWithFrame:self.view.bounds];
+        weatherView.delegate = self;
         weatherView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bgimage"]];
-
         weatherView.tag = placemark.locality.hash;
-        
+        [MBProgressHUD showMessage:@"正在加载天气"];
         _pgControl.numberOfPages += 1;
-        [_weatherScrView addSubview:weatherView isLaunch:YES];
+        [_weatherScrView addSubview:weatherView isLaunch:NO];
         [_weatherTags addObject:[NSNumber numberWithInteger:weatherView.tag]];
 
         [XYWeatherStateManager setWeatherTags:_weatherTags];
