@@ -180,13 +180,13 @@
 - (void)initConditionDescLabel
 {
 
-    _conditionDescLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0.5 * WIDTH, 30)];
-    _conditionDescLabel.center = CGPointMake(self.container.center.x, 0.13 * HEIGHT);
+    _conditionDescLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 30)];
+    _conditionDescLabel.center = CGPointMake(self.container.center.x, 0.135 * HEIGHT);
     _conditionDescLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:24];
     _conditionDescLabel.textColor = [UIColor whiteColor];
     _conditionDescLabel.textAlignment = NSTextAlignmentCenter;
     _conditionDescLabel.numberOfLines = 1;
-    _conditionDescLabel.adjustsFontSizeToFitWidth = YES;
+//    _conditionDescLabel.adjustsFontSizeToFitWidth = YES;
     [_container addSubview:_conditionDescLabel];
 }
 
@@ -195,7 +195,7 @@
  */
 - (void)initCurrentTempLabel
 {
-    _currentTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.center.x - 130, self.center.y, 120 , 65)];
+    _currentTempLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.center.x - 135, self.center.y, 120 , 65)];
     _currentTempLabel.textAlignment = NSTextAlignmentRight;
     _currentTempLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:80];
     _currentTempLabel.textColor = [UIColor whiteColor];

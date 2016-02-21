@@ -9,31 +9,31 @@
 #import "XYWeatherStateManager.h"
 
 @implementation XYWeatherStateManager
-+ (NSMutableDictionary *)weatherData
++ (NSDictionary *)weatherData
 {
     NSData *encodedWeatherData = [[NSUserDefaults standardUserDefaults]objectForKey:@"weather_data"];
     if(encodedWeatherData) {
-        return (NSMutableDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:encodedWeatherData];
+        return (NSDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:encodedWeatherData];
     }
     return nil;
 }
 
-+ (void)setWeatherData:(NSMutableDictionary *)weatherData
++ (void)setWeatherData:(NSDictionary *)weatherData
 {
     NSData *encodedWeatherData = [NSKeyedArchiver archivedDataWithRootObject:weatherData];
     [[NSUserDefaults standardUserDefaults]setObject:encodedWeatherData forKey:@"weather_data"];
 }
 
-+ (NSMutableArray *)weatherTags
++ (NSArray *)weatherTags
 {
     NSData *encodedWeatherTags = [[NSUserDefaults standardUserDefaults]objectForKey:@"weather_tags"];
     if(encodedWeatherTags) {
-        return (NSMutableArray *)[NSKeyedUnarchiver unarchiveObjectWithData:encodedWeatherTags];
+        return (NSArray *)[NSKeyedUnarchiver unarchiveObjectWithData:encodedWeatherTags];
     }
     return nil;
 }
 
-+ (void)setWeatherTags:(NSMutableArray *)weatherTags
++ (void)setWeatherTags:(NSArray *)weatherTags
 {
     NSData *encodedWeatherTags = [NSKeyedArchiver archivedDataWithRootObject:weatherTags];
     [[NSUserDefaults standardUserDefaults]setObject:encodedWeatherTags forKey:@"weather_tags"];

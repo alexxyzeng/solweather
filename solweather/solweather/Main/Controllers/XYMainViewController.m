@@ -91,7 +91,6 @@
         [self initViewControllers];
         [self initSubViews];
         [self initWeatherView];
-        [self updateWeatherData];
 //        [self.view bringSubviewToFront:_blurredOverlayView];
     }
     return self;
@@ -268,9 +267,9 @@
 //从网络获取天气数据
 - (void)updateWeatherData
 {
+    [MBProgressHUD showMessage:@"正在更新天气"];
     for (XYWeatherView *weatherView in _weatherScrView.subviews) {
             XYWeatherData *weatherData = [_weatherData objectForKey:[NSNumber numberWithInteger:weatherView.tag]];
-            [MBProgressHUD showMessage:@"正在更新天气"];
             [XYGetWeatherData getDetailedWeatherDataWithPlacemark:weatherData.placemark withTag:weatherView.tag success:^(XYWeatherData *data) {
                 //有数据就更新视图数据
                 [self didFinishDownloadingWeatherData:data withTag:weatherView.tag];
@@ -289,7 +288,7 @@
             [XYWeatherStateManager setWeatherData:_weatherData];
         }
         [self updateWeatherView:weatherView withData:data];
-        [MBProgressHUD hideHUD];
+//        [MBProgressHUD hideHUD];
     }
 }
 
@@ -399,7 +398,11 @@
 - (void)didAddLocationWithPlacemark:(CLPlacemark *)placemark
 {
     XYWeatherData *weatherData = [_weatherData objectForKey:[NSNumber numberWithInteger:placemark.locality.hash]];
+    for (XYWeatherView *weatherView in _weatherScrView.subviews) {
+        [self updateWeatherView:weatherView withData:[_weatherData objectForKey:[NSNumber numberWithInteger:weatherView.tag]]];
+    }
     if (!weatherData) {//如果没有天气数据
+        
         XYWeatherView *weatherView = [[XYWeatherView alloc] initWithFrame:self.view.bounds];
         weatherView.delegate = self;
         weatherView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bgimage"]];
@@ -411,8 +414,9 @@
 
         [XYWeatherStateManager setWeatherTags:_weatherTags];
         
-        [XYGetWeatherData getDetailedWeatherDataWithPlacemark:placemark withTag:weatherView.tag success:^(XYWeatherData *data) {
-            [self didFinishDownloadingWeatherData:data withTag:weatherView.tag];
+        [XYGetWeatherData getDetailedWeatherDataWithPlacemark:placemark withTag:placemark.locality.hash success:^(XYWeatherData *data) {
+            [self didFinishDownloadingWeatherData:data withTag:placemark.locality.hash];
+            [self initWeatherView];
         } failure:^(NSError *error) {
             [self didFailToDownloadDataWithTag:weatherView.tag];
         }];
@@ -435,6 +439,7 @@
 - (void)didBeginPanningWeatherView
 {
     _weatherScrView.scrollEnabled = NO;
+    [self updateWeatherData];
 }
 //下拉结束，允许滚动
 - (void)didFinishPanningWeatherView

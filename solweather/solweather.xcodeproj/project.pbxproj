@@ -110,8 +110,8 @@
 		0660B0D91C761FA00027C12D /* XYGetWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYGetWeatherData.m; sourceTree = "<group>"; };
 		0660B0DA1C761FA00027C12D /* XYHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYHttpTool.h; sourceTree = "<group>"; };
 		0660B0DB1C761FA00027C12D /* XYHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYHttpTool.m; sourceTree = "<group>"; };
-		0660B0DC1C761FA00027C12D /* XYWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYWeatherData.h; sourceTree = "<group>"; };
-		0660B0DD1C761FA00027C12D /* XYWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYWeatherData.m; sourceTree = "<group>"; };
+		0660B0DC1C761FA00027C12D /* XYWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XYWeatherData.h; path = ../../Tool/XYWeatherData.h; sourceTree = "<group>"; };
+		0660B0DD1C761FA00027C12D /* XYWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XYWeatherData.m; path = ../../Tool/XYWeatherData.m; sourceTree = "<group>"; };
 		0660B0DE1C761FA00027C12D /* XYWeatherStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYWeatherStateManager.h; sourceTree = "<group>"; };
 		0660B0DF1C761FA00027C12D /* XYWeatherStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYWeatherStateManager.m; sourceTree = "<group>"; };
 		0666A9F81C7894CB00A62FEB /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
@@ -356,8 +356,6 @@
 				0660B0D91C761FA00027C12D /* XYGetWeatherData.m */,
 				0660B0DA1C761FA00027C12D /* XYHttpTool.h */,
 				0660B0DB1C761FA00027C12D /* XYHttpTool.m */,
-				0660B0DC1C761FA00027C12D /* XYWeatherData.h */,
-				0660B0DD1C761FA00027C12D /* XYWeatherData.m */,
 				0660B0DE1C761FA00027C12D /* XYWeatherStateManager.h */,
 				0660B0DF1C761FA00027C12D /* XYWeatherStateManager.m */,
 			);
@@ -398,6 +396,8 @@
 		06D2DF661C7766AE00B6BFD2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0660B0DC1C761FA00027C12D /* XYWeatherData.h */,
+				0660B0DD1C761FA00027C12D /* XYWeatherData.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
